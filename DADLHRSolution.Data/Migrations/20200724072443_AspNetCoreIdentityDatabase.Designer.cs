@@ -4,14 +4,16 @@ using DADLHRSolution.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DADLHRSolution.Data.Migrations
 {
     [DbContext(typeof(DADLHRContext))]
-    partial class DADLHRContextModelSnapshot : ModelSnapshot
+    [Migration("20200724072443_AspNetCoreIdentityDatabase")]
+    partial class AspNetCoreIdentityDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,16 +58,6 @@ namespace DADLHRSolution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "93983e0e-c340-4687-8fa3-f5919872493e",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DADLHRSolution.Data.Entities.AppUser", b =>
@@ -132,27 +124,6 @@ namespace DADLHRSolution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "e92bbf4c-1446-4b73-a71e-f505fa04148f",
-                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tedu.international@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Toan",
-                            LastName = "Bach",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "tedu.international@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMwwUDZLXRUXK8mz81+s8pt3Yv2MX91b7P9aM5I6riX1bK2mguNDwLV9rfYS3ghzmw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DADLHRSolution.Data.Entities.Test", b =>
@@ -299,13 +270,6 @@ namespace DADLHRSolution.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>

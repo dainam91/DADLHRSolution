@@ -4,14 +4,16 @@ using DADLHRSolution.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DADLHRSolution.Data.Migrations
 {
     [DbContext(typeof(DADLHRContext))]
-    partial class DADLHRContextModelSnapshot : ModelSnapshot
+    [Migration("20200724073702_SeedIdentityUser")]
+    partial class SeedIdentityUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
